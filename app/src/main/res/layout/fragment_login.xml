@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+    <!-- constraint layout is used to that it can be extended to more complex UI in the future -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.LoginFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="login"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:layout_editor_absoluteX="12dp" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="password"
+            app:layout_constraintStart_toStartOf="parent"
+            android:inputType="numberPassword"
+            app:layout_constraintTop_toBottomOf="@+id/editText"
+            tools:layout_editor_absoluteX="20dp" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:background="@color/colorPrimary"
+            android:text="login"
+            app:layout_constraintTop_toBottomOf="@+id/editText2"
+            tools:layout_editor_absoluteX="20dp" />
+
+        <Button
+            android:id="@+id/signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:layout_marginTop="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/colorPrimary"
+            android:text="signup"
+            app:layout_constraintTop_toBottomOf="@+id/login"
+            tools:layout_editor_absoluteX="20dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

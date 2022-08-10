@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestore.ui.ShoeViewModel" />
+    </data>
+
+    <!-- constraint layout is used to that it can be extended to more complex UI in the future -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/shoe_detail_title"
+            android:textSize="35sp"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Shoe Title"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_detail_title">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="shoe name"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"/>
+
+                <EditText
+                    android:id="@+id/shoe_name_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="shoe_name"
+                    android:inputType="text"
+                    android:text="@={viewModel.newName}"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="shoe company"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"/>
+                <EditText
+                    android:id="@+id/company_name_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="company_name"
+                    android:inputType="text"
+                    android:text="@={viewModel.newCompany}"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="shoe size"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"/>
+
+                <EditText
+                    android:id="@+id/shoe_size_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="shoe_size"
+                    android:inputType="numberSigned|numberDecimal"
+                    android:text="@={viewModel.newSize}"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="description"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"/>
+                <EditText
+                    android:id="@+id/shoe_description_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="description"
+                    android:inputType="textPersonName"
+                    android:text="@={viewModel.newDescription}"
+                    />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="save"
+            android:background="@color/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@+id/cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="cancel"
+            android:background="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.9" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
